@@ -20,26 +20,27 @@ const data = [
       "id": "c-1",
       "label": "Mark as Complete",
       "checked": false,
-      "videoUrl": "https://www.youtube.com/embed/UFD4SP91tSM?si=C7hBGT1vE-gKSaBI"
+      "videoUrl": "https://www.youtube.com/embed/Yesf31dK4f8?si=xp24REuEmVWO03c9"
   },
   {
       "id": "c-2",
       "label": "Mark as Complete",
       "checked": false,
-      "videoUrl": "https://www.youtube.com/embed/EsRyyJmO-u8?si=31vxa-BDYNvOdfUs"
+      "videoUrl": "https://www.youtube.com/embed/DSZbB-49bmE?si=zdI5Tdg_nnXvcStJ"
   },
   {
       "id": "c-3",
       "label": "Mark as Complete",
       "checked": false,
-      "videoUrl": "https://www.youtube.com/embed/UFD4SP91tSM?si=C7hBGT1vE-gKSaBI"
+      "videoUrl": "https://www.youtube.com/embed/Yesf31dK4f8?si=xp24REuEmVWO03c9"
   },
   {
       "id": "c-4",
       "label": "Mark as Complete",
       "checked": false,
-      "videoUrl": "https://www.youtube.com/embed/EsRyyJmO-u8?si=31vxa-BDYNvOdfUs"
-  }
+      "videoUrl": "https://www.youtube.com/embed/DSZbB-49bmE?si=zdI5Tdg_nnXvcStJ"
+  },
+ 
 ]
 
 renderContent(data)
