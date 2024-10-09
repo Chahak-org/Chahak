@@ -18,6 +18,8 @@ body {
   flex-direction: column;
 
   & .container {
+    max-width: 420px;
+    min-width: 320px;
     height: 90vh;
     padding: 1rem;
     display: flex;
