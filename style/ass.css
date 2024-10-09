@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  & .continer {
+    max-width: 420px;
+    min-width: 320px;
+    max-height: 90%;
+    min-height: 100vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* border: 5px solid black; */
+    border-radius: 50px;
+
+    & .nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2em;     
+    }
+
+    & .question {
+      /* border: 2px solid green; */
+      & bold {
+        font-weight: bolder;
+        font-size: 1.5em;
+      }
+      /* min-width: 300px; */
+      word-spacing: 3px;
+      min-height: 200px;
+    }
+
+    & .opt {
+      display: flex;
+      flex-direction: column;
+      /* border: 5px solid red; */
+      margin-bottom: 25px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding-left: 1%;
+      padding-right: 1%;
+      & input[type="radio"]{
+        display: none;
+      }
+      & input[type="radio"]:checked + label{
+        background: #263238;
+      }
+      
+      & label{
+        width: 320px;
+        min-height: 50px;
+        /* border: 2px solid rgb(150, 37, 37); */
+        border-radius: 9.5px;
+        padding-left: 5px;
+        font-size: 1.1em;
+        font-weight: 300;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background: linear-gradient(
+          25deg,
+          rgb(109, 112, 214),
+          rgb(93, 95, 155),
+          rgb(107, 134, 200)
+        );
+      }
+      :hover {
+        font-weight: 400;
+        background: linear-gradient(
+          25deg,
+          rgb(72, 75, 151),
+          rgb(62, 64, 109),
+          rgb(67, 87, 139)
+        );
+      }
+    }
+
+    & .operation {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      /* background-color: red; */
+      font-size: 1.2em;
+      position: relative;
+      bottom: 10px;
+      padding: 20px;
+      & div {
+        padding: 5px;
+        text-transform: uppercase;
+        border-radius: 10px;
+      }
+      :hover {
+        color: rgb(87, 87, 87);
+        cursor: pointer;
+      }
+      & .prev {
+        background: rgb(228, 207, 255);
+        border: 2px solid rgb(167, 141, 202);
+      }
+      & .next {
+        background: rgb(199, 253, 208);
+        border: 2px solid rgb(144, 223, 158);
+
+      }
+      & .Submit {
+        background: rgb(212, 226, 255);
+        border: 2px solid rgb(134, 162, 221);
+      }
+    }
+  }
+}
+
