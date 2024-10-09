@@ -73,8 +73,8 @@ function renderContent (content) {
 
     // Create iframe for video
     const iframe = document.createElement('iframe')
-    iframe.width = '360'
-    iframe.height = '210'
+    iframe.width = '310'
+    iframe.height = '200'
     iframe.src = item.videoUrl
     iframe.title = 'YouTube video player'
     iframe.setAttribute('frameborder', '0')
