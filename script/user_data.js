@@ -4,17 +4,46 @@ const result = urlParams.get('result')
 document.getElementById('C_userName').innerHTML = name
 
 //fetch content from content.json
-let path = '../dataBase/content.json'
-fetch(path)
-  .then(Response => Response.json())
-  .then(data => {
-    console.log(data)
-    renderContent(data)
-  })
+// let path = '../dataBase/content.json'
+// fetch(path)
+//   .then(Response => Response.json())
+//   .then(data => {
+//     console.log(data)
+//     renderContent(data)
+//   })
 
-  .catch(error => alert('Error:', error))
+//   .catch(error => alert('Error:', error))
 
 //
+const data = [
+  {
+      "id": "c-1",
+      "label": "Mark as Complete",
+      "checked": false,
+      "videoUrl": "https://www.youtube.com/embed/UFD4SP91tSM?si=C7hBGT1vE-gKSaBI"
+  },
+  {
+      "id": "c-2",
+      "label": "Mark as Complete",
+      "checked": false,
+      "videoUrl": "https://www.youtube.com/embed/EsRyyJmO-u8?si=31vxa-BDYNvOdfUs"
+  },
+  {
+      "id": "c-3",
+      "label": "Mark as Complete",
+      "checked": false,
+      "videoUrl": "https://www.youtube.com/embed/UFD4SP91tSM?si=C7hBGT1vE-gKSaBI"
+  },
+  {
+      "id": "c-4",
+      "label": "Mark as Complete",
+      "checked": false,
+      "videoUrl": "https://www.youtube.com/embed/EsRyyJmO-u8?si=31vxa-BDYNvOdfUs"
+  }
+]
+
+renderContent(data)
+
 
 function renderContent (content) {
   const contentList = document.getElementById('content-list')
