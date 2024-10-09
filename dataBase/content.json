@@ -1,0 +1,26 @@
+[
+    {
+        "id": "c-1",
+        "label": "Mark as Complete",
+        "checked": false,
+        "videoUrl": "https://www.youtube.com/embed/UFD4SP91tSM?si=C7hBGT1vE-gKSaBI"
+    },
+    {
+        "id": "c-2",
+        "label": "Mark as Complete",
+        "checked": false,
+        "videoUrl": "https://www.youtube.com/embed/EsRyyJmO-u8?si=31vxa-BDYNvOdfUs"
+    },
+    {
+        "id": "c-3",
+        "label": "Mark as Complete",
+        "checked": false,
+        "videoUrl": "https://www.youtube.com/embed/UFD4SP91tSM?si=C7hBGT1vE-gKSaBI"
+    },
+    {
+        "id": "c-4",
+        "label": "Mark as Complete",
+        "checked": false,
+        "videoUrl": "https://www.youtube.com/embed/EsRyyJmO-u8?si=31vxa-BDYNvOdfUs"
+    }
+]
