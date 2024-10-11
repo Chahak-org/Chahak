@@ -16,29 +16,20 @@ document.getElementById('C_userName').innerHTML = name
 
 //
 const data = [
-  {
+    {
       "id": "c-1",
       "label": "Mark as Complete",
       "checked": false,
-      "videoUrl": "https://www.youtube.com/embed/Yesf31dK4f8?si=xp24REuEmVWO03c9"
+      "videoUrl": "https://drive.google.com/file/d/1FVtAN9ub495ZBMcR_P7L2KiO3_rxd1Fr/preview",
+
+      "thumbnail": "assest/t_n.png"  // Add thumbnail for the first video
   },
   {
       "id": "c-2",
       "label": "Mark as Complete",
       "checked": false,
-      "videoUrl": "https://www.youtube.com/embed/DSZbB-49bmE?si=zdI5Tdg_nnXvcStJ"
-  },
-  {
-      "id": "c-3",
-      "label": "Mark as Complete",
-      "checked": false,
-      "videoUrl": "https://www.youtube.com/embed/Yesf31dK4f8?si=xp24REuEmVWO03c9"
-  },
-  {
-      "id": "c-4",
-      "label": "Mark as Complete",
-      "checked": false,
-      "videoUrl": "https://www.youtube.com/embed/DSZbB-49bmE?si=zdI5Tdg_nnXvcStJ"
+      "videoUrl": "https://drive.google.com/file/d/1BBnYqSQaQSZBieMsOjWFNM8ADgU7hofN/preview",
+      "thumbnail": "assest/t_n.png"  // Add thumbnail for the second video
   },
  
 ]
