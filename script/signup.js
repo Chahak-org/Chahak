@@ -28,6 +28,7 @@ SignUpButton.addEventListener('click', (e) => {
     if(isValid){
         console.log(`NAME: ${fullName.value} CONTACT: ${contact.value} PASSWORD: ${password.value}`);
         const name = encodeURIComponent(fullName.value);
-        window.location.href = `user.html?name=${name}`;
+        window.open(`user.html?name=${name}`,'_blank');
+        window.close();
     }
 })
