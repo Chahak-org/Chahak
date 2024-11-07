@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  & .container {
+    max-height: 90%;
+    min-height: 100vh;
+
+    max-width: 420px;
+    min-width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    gap: 20px;
+    /* border: 5px solid black; */
+    padding: 20px;
+    margin:5px;
+    border-radius: 50px;
+
+    & .nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      font-size: 1.2em;
+
+      & i {
+        font-style: normal;
+      }
+    }
+
+    & .content {
+      & ul {
+        width:350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        
+        list-style: none;
+
+        & li {
+          padding: 5px;
+          border-radius: 20px;
+          background: linear-gradient(
+            25deg,
+            rgb(181, 144, 223),
+            rgb(175, 145, 182),
+            rgb(234, 181, 255)
+          );
+
+          & video {
+            border-radius: 20px;
+          }
+
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          & .ctr {
+            display: flex;
+            justify-content: right;
+
+            gap: 5px;
+            & input[type='checkbox'] {
+              width: 20px;
+              accent-color: rgb(62, 221, 62);
+              cursor: pointer;
+            }
+            & i {
+              color: rgb(25, 0, 48);
+              font-style: normal;
+            }
+          }
+        }
+      }
+    }
+    & .assignment,
+    .certificate {
+      width: 300px;
+      height: 50px;
+      border-radius: 9.5px;
+      padding-left: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: none;
+      border: none;
+    }:hover{
+      transform: translateY(-2px);
+    }
+    & .assignment {
+      color: white;
+      background: linear-gradient(
+        25deg,
+        rgb(109, 112, 214),
+        rgb(93, 95, 155),
+        rgb(107, 134, 200)
+      );
+    }
+    & .certificate {
+      
+      color: white;
+      background: linear-gradient(
+        25deg,
+        rgb(55, 138, 39),
+        rgb(12, 93, 31),
+        rgb(55, 138, 39)
+      );
+    }
+  }
+}
+
+
