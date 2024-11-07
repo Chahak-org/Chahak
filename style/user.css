@@ -26,12 +26,116 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     gap: 20px;
+    /* for test */
     /* border: 5px solid black; */
+    /* test end */
     padding: 20px;
-    margin:5px;
+    margin: 5px;
     border-radius: 50px;
+
+    overflow: hidden;
+
+    & .mainNav {
+      /* for test */
+      /* background: rgb(184, 121, 255); */
+      /* temp end */
+      width: 100%;
+      height: 50px;
+      display: grid;
+      grid-template-columns: 40% auto;
+      gap: 10px;
+      align-items: center;
+
+      & .open-close {
+        /* for test  */
+        /* background: red; */
+        /* test end  */
+
+        & #close {
+          display: none;
+          cursor: pointer;
+        }
+
+        & #open {
+          display: inline-block;
+          cursor: pointer;
+        }
+      }
+
+      & p {
+        /* for test  */
+        /* background-color: yellow; */
+        /* test end  */
+      }
+    }
+
+    position: relative;
+
+    & .modules {
+      width: 100%;
+      height: 100vh;
+
+      padding: 15px;
+      background: lightgray;
+
+      position: absolute;
+      top: 75px;
+      right: 120%;
+
+      display: flex;
+      justify-content: center;
+      overflow-y: scroll;
+      z-index: 111;
+      transition: right 0.3s ease;
+
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      border: 1px solid black;
+
+      & .course-container {
+        & .course-section {
+          padding: 16px;
+          border-bottom: 1px solid #ddd;
+          & .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #c41818;
+            margin-bottom: 10px;
+            & .progress {
+              color: #888;
+              font-size: 0.9em;
+            }
+          }
+        }
+        & .course-item {
+          display: flex;
+          align-items: center;
+          margin: 8px 0;
+          border: 1px solid black;
+          padding: 5px;
+          height: 80px;
+          & .item-icon {
+            font-size: 1.2em;
+            color: #19e020;
+            margin-right: 10px;
+          }
+          & .item-content h3 {
+            font-size: 1em;
+            color: #333;
+          }
+          & .item-content p {
+            font-size: 0.85em;
+            color: #888;
+          }
+        }
+      }
+    }
 
     & .nav {
       width: 100%;
@@ -49,13 +153,13 @@ body {
 
     & .content {
       & ul {
-        width:350px;
+        width: 350px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 15px;
-        
+
         list-style: none;
 
         & li {
@@ -106,7 +210,8 @@ body {
       align-items: center;
       outline: none;
       border: none;
-    }:hover{
+    }
+    :hover {
       transform: translateY(-2px);
     }
     & .assignment {
@@ -119,7 +224,6 @@ body {
       );
     }
     & .certificate {
-      
       color: white;
       background: linear-gradient(
         25deg,
@@ -130,5 +234,4 @@ body {
     }
   }
 }
-
 
