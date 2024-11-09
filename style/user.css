@@ -63,27 +63,20 @@ body {
           cursor: pointer;
         }
       }
-
-      & p {
-        /* for test  */
-        /* background-color: yellow; */
-        /* test end  */
-      }
     }
 
     position: relative;
 
     & .modules {
-      width: 100%;
-      height: 100vh;
+      width: 95%;
+      height: 80vh;
 
       padding: 15px;
-      background: lightgray;
-
+      
       position: absolute;
       top: 75px;
       right: 120%;
-
+      
       display: flex;
       justify-content: center;
       overflow-y: scroll;
@@ -92,9 +85,9 @@ body {
 
       background-color: #ffffff;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-      border: 1px solid black;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
+      
+      
 
       & .course-container {
         & .course-section {
@@ -117,9 +110,13 @@ body {
           display: flex;
           align-items: center;
           margin: 8px 0;
-          border: 1px solid black;
+          /* border: 1px solid rgb(120, 135, 223); */
+          box-shadow: 0px 1px 8px rgb(106, 152, 221);
           padding: 5px;
           height: 80px;
+          border-radius:12px;
+          cursor: pointer;
+          
           & .item-icon {
             font-size: 1.2em;
             color: #19e020;
@@ -231,6 +228,33 @@ body {
         rgb(12, 93, 31),
         rgb(55, 138, 39)
       );
+    }
+    & .footNav{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      /* background-color: red; */
+      font-size: 1.2em;
+      position: relative;
+      bottom: 10px;
+      padding: 20px;
+      & div {
+        padding: 5px;
+        text-transform: uppercase;
+        border-radius: 10px;
+      }
+      :hover {
+        color: rgb(87, 87, 87);
+        cursor: pointer;
+      }
+      & .FnP {
+        background: rgb(228, 207, 255);
+        border: 2px solid rgb(167, 141, 202);
+      }
+      & .FnN {
+        background: rgb(199, 253, 208);
+        border: 2px solid rgb(144, 223, 158);
+      }
     }
   }
 }
