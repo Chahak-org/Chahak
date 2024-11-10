@@ -22,7 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
 function done() {
     const Name = encodeURIComponent(getParameterByName('name'));
     const Result = encodeURIComponent(getParameterByName('status'));
-    window.location.href = `user.html?name=${Name}&result=${Result}`;
+    const moduleId = Number(getParameterByName('moduleId')); // Retrieve moduleId from URL
+    const MID = Result === "Pass" ? moduleId + 1 : moduleId - 1; // Increment or decrement MID
+
+    // Redirect to the new URL with updated moduleId
+    window.location.href = `user.html?name=${Name}&moduleId=${MID}&type=R&result=${Result}`;
 }
 
 
