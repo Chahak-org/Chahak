@@ -199,10 +199,34 @@ modulePrev.addEventListener('click', () => {
     }
 });
 
+// const moduleNext = document.getElementById('moduleNext');
+// moduleNext.addEventListener('click', () => {
+//     let cmid = moduleId + 1;
+//     let dt = Object.keys(ModuleData[cmid]);
+
+//     if (dt.includes("R")) {
+//         openContent(Name, 'user.html', cmid, 'R');
+//     } else {
+//         openContent(Name, 'assignment.html', cmid, 'Q');
+//     }   
+// });
+
+
+
+ 
+//  function openContent(name, page, moduleId, type){
+//     const url = `${page}?moduleId=${moduleId}&type=${type}&name=${Name}`;
+//     window.location.href = url;
+// }
+
 const moduleNext = document.getElementById('moduleNext');
+
 moduleNext.addEventListener('click', () => {
-    let cmid = moduleId + 1;
+    let cmid = moduleId + 1; // Next module ID
     let dt = Object.keys(ModuleData[cmid]);
+
+    // Update the current module as completed
+    completeModule(moduleId);
 
     if (dt.includes("R")) {
         openContent(Name, 'user.html', cmid, 'R');
@@ -211,10 +235,32 @@ moduleNext.addEventListener('click', () => {
     }
 });
 
+function completeModule(moduleId) {
+    const storedUserData = JSON.parse(localStorage.getItem('userData'));
 
+    if (storedUserData) {
+        if (!storedUserData.completedModules) {
+            storedUserData.completedModules = [];
+        }
 
- 
- function openContent(name, page, moduleId, type){
-    const url = `${page}?moduleId=${moduleId}&type=${type}&name=${Name}`;
+        if (!storedUserData.completedModules.includes(moduleId)) {
+            storedUserData.completedModules.push(moduleId);
+            localStorage.setItem('userData', JSON.stringify(storedUserData));
+            console.log(`Module ${moduleId} marked as completed.`);
+        } else {
+            console.log(`Module ${moduleId} is already completed.`);
+        }
+    } else {
+        console.warn('User data not found. Please log in.');
+    }
+}
+
+function openContent(name, page, moduleId, type) {
+    let urlname = encodeURIComponent(name);
+    let urlpage = encodeURIComponent(page);
+    let urlmoduleId = encodeURIComponent(moduleId);
+    let urltype = encodeURIComponent(type);
+    const url = `${urlpage}?name=${urlname}&moduleId=${urlmoduleId}&type=${urltype}`;
     window.location.href = url;
 }
+

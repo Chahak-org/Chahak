@@ -2,6 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const openIcon = document.getElementById("open");
     const closeIcon = document.getElementById("close");
     const modules = document.querySelector(".modules");
+    const logoutButton = document.getElementById("logout");
+
+    //Logout
+    logoutButton.addEventListener('click', () => {
+        const storedUserData = JSON.parse(localStorage.getItem('userData'));
+    
+        if (storedUserData) {
+            // Set the user as logged out by updating a flag
+            storedUserData.isLoggedIn = false;
+            localStorage.setItem('userData', JSON.stringify(storedUserData));
+        }
+    
+        alert('लॉगआउट सफल!');
+        window.location.href = 'login.html';
+    });
 
     // Function to show the modules and toggle icons
     function openMenu() {

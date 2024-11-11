@@ -15,9 +15,9 @@ let quizData = []
 
 // Fetch data from the URL
 const urlParams = new URLSearchParams(window.location.search)
-const username = urlParams.get('name') || 'Guest'
+const username = urlParams.get('name');
 const moduleId = Number(urlParams.get('moduleId'))
-userName.innerText = username
+userName.innerText = username;
 
 // Timer (5 min 25 sec)
 let timeLimit = 5 * 60 + 25 // Convert to seconds

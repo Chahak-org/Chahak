@@ -27,8 +27,18 @@ SignUpButton.addEventListener('click', (e) => {
 
     if(isValid){
         console.log(`NAME: ${fullName.value} CONTACT: ${contact.value} PASSWORD: ${password.value}`);
-        const name = encodeURIComponent(fullName.value);
-        window.open(`user.html?name=${name}`,'_blank');
-        window.close();
+        const userData = {
+            fullName: fullName.value,
+            contact: contact.value,
+            password: password.value,
+            completedModules: [] // Track completed modules
+        };
+        
+        localStorage.setItem('userData', JSON.stringify(userData));
+
+        window.location.href = 'login.html';
+        // const name = encodeURIComponent(fullName.value);
+        // window.open(`user.html?name=${name}`,'_blank');
+        // window.close();
     }
 })

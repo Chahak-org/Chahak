@@ -23,13 +23,51 @@ function done() {
     const Name = encodeURIComponent(getParameterByName('name'));
     const Result = encodeURIComponent(getParameterByName('status'));
     const moduleId = Number(getParameterByName('moduleId')); // Retrieve moduleId from URL
-    const MID = Result === "Pass" ? moduleId + 1 : moduleId - 1; // Increment or decrement MID
+    // const MID = Result === "Pass" ? moduleId + 1 : moduleId - 1; // Increment or decrement MID
 
-    // Redirect to the new URL with updated moduleId
-    window.location.href = `user.html?name=${Name}&moduleId=${MID}&type=R&result=${Result}`;
+    // // Redirect to the new URL with updated moduleId
+    // window.location.href = `user.html?name=${Name}&moduleId=${MID}&type=R&result=${Result}`;
+
+    // ---->
+
+
+    const storedUserData = JSON.parse(localStorage.getItem('userData'));
+
+    if (!storedUserData) {
+        alert('User data not found! Please log in again.');
+        window.location.href = 'login.html';
+        return;
+    }
+
+    if (Result === "Pass") {
+        completeModule(moduleId); // Mark the current module as completed
+        const nextModuleId = moduleId + 1; // Move to the next module
+        window.location.href = `user.html?name=${Name}&moduleId=${nextModuleId}&type=R&result=${Result}`;
+    } else {
+        const previousModuleId = Math.max(1, moduleId - 1); // Prevent going below module 1
+        alert('आप परीक्षा में असफल हो गए हैं। पिछले मॉड्यूल पर वापस जा रहे हैं।');
+        window.location.href = `user.html?name=${Name}&moduleId=${previousModuleId}&type=R&result=${Result}`;
+    }
+
 }
 
+function completeModule(moduleId) {
+    const storedUserData = JSON.parse(localStorage.getItem('userData'));
 
+    if (storedUserData) {
+        if (!storedUserData.completedModules) {
+            storedUserData.completedModules = [];
+        }
+
+        if (!storedUserData.completedModules.includes(moduleId)) {
+            storedUserData.completedModules.push(moduleId);
+            localStorage.setItem('userData', JSON.stringify(storedUserData));
+            alert(`मॉड्यूल ${moduleId} पूरा हो गया है!`);
+        } else {
+            console.log(`मॉड्यूल ${moduleId} पहले ही पूरा किया जा चुका है।`);
+        }
+    }
+}
 
 
 //////

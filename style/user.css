@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaini+Purva&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Devanagari:wght@100..900&family=Unkempt:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 * {
   margin: 0;
@@ -43,25 +45,50 @@ body {
       /* temp end */
       width: 100%;
       height: 50px;
-      display: grid;
-      grid-template-columns: 40% auto;
-      gap: 10px;
+      display: flex;
+      justify-content: space-around;
       align-items: center;
+      gap: 10px;
 
       & .open-close {
         /* for test  */
         /* background: red; */
         /* test end  */
+      
 
         & #close {
           display: none;
           cursor: pointer;
+          width:25px;
         }
 
         & #open {
           display: inline-block;
           cursor: pointer;
+          width:25px;
         }
+      }
+      & p{
+        font-size: 30px;
+         font-weight: bold;
+         font-family: "Kalam", cursive;
+         color: rgb(79, 79, 168);
+         & img{
+            width: 30px;
+         }
+      }
+      & #logout{
+        padding: 9px;
+        background: linear-gradient(to right,rgb(55, 108, 138),rgb(88, 167, 170));
+        border-radius:10px;
+        color: rgb(250, 250, 250);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        height: 30px;
+        font-size: 13px;
+        cursor: pointer;
       }
     }
 
@@ -88,21 +115,28 @@ body {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
       
       
-
+      
       & .course-container {
         & .course-section {
           padding: 16px;
-          border-bottom: 1px solid #ddd;
+          /* border-bottom: 10px solid #c8dbff; */
+          /* background: linear-gradient(to right,rgb(137, 106, 163),rgb(82, 20, 117)); */
           & .course-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: bold;
-            color: #c41818;
+            color: #dcd4ff;
             margin-bottom: 10px;
+            /* border: 2px solid rgb(17, 70, 65); */
+            background: linear-gradient(120deg,rgb(25, 11, 37),rgb(84, 69, 151));
+            border-radius: 30px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 4px;
             & .progress {
-              color: #888;
-              font-size: 0.9em;
+              display: none;
             }
           }
         }
@@ -110,8 +144,9 @@ body {
           display: flex;
           align-items: center;
           margin: 8px 0;
-          /* border: 1px solid rgb(120, 135, 223); */
-          box-shadow: 0px 1px 8px rgb(106, 152, 221);
+          border: 2px dotted rgb(120, 135, 223);
+          background: rgb(244, 239, 255);
+          /* box-shadow: 0px 1px 8px rgb(106, 152, 221); */
           padding: 5px;
           height: 80px;
           border-radius:12px;
@@ -119,8 +154,9 @@ body {
           
           & .item-icon {
             font-size: 1.2em;
-            color: #19e020;
+            color: #435343;
             margin-right: 10px;
+            display: none;
           }
           & .item-content h3 {
             font-size: 1em;
@@ -128,7 +164,7 @@ body {
           }
           & .item-content p {
             font-size: 0.85em;
-            color: #888;
+            color: #a3a3a3;
           }
         }
       }
@@ -146,6 +182,7 @@ body {
       & i {
         font-style: normal;
       }
+     
     }
 
     & .content {
