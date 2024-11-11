@@ -1,6 +1,6 @@
 const storedUserData = JSON.parse(localStorage.getItem('userData'));
 const welcomeMessage = document.getElementById('welcomeMessage');
-const moduleList = document.getElementById('moduleList');
+// const moduleList = document.getElementById('moduleList');
 const continueButton = document.getElementById('continueButton');
 const logoutButton = document.getElementById('logoutButton');
 
@@ -13,21 +13,21 @@ if (!storedUserData) {
 
     // Display completed modules
     const completedModules = storedUserData.completedModules || [];
-    if (completedModules.length > 0) {
-        completedModules.forEach(module => {
-            const li = document.createElement('li');
-            li.innerText = `मॉड्यूल ${module}`;
-            moduleList.appendChild(li);
-        });
-    } else {
-        moduleList.innerHTML = '<li>कोई मॉड्यूल पूरा नहीं हुआ है।</li>';
-    }
+    // if (completedModules.length > 0) {
+    //     completedModules.forEach(module => {
+    //         const li = document.createElement('li');
+    //         li.innerText = `मॉड्यूल ${module}`;
+    //         moduleList.appendChild(li);
+    //     });
+    // } else {
+    //     moduleList.innerHTML = '<li>कोई मॉड्यूल पूरा नहीं हुआ है।</li>';
+    // }
 
     // Continue button logic
     continueButton.addEventListener('click', () => {
         const lastModule = completedModules.slice(-1)[0] || 1;
-        const type = (lastModule % 2 === 0) ? 'Q' : 'R'; // Example logic for type
-        window.location.href = `user.html?moduleId=${lastModule}&type=${type}`;
+        const name = storedUserData.fullName;    
+        window.location.href = `user.html?moduleId=${lastModule}&name=${name}`;
     });
 
     // Logout button logic

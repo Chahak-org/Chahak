@@ -187,6 +187,15 @@ import { ModuleData } from  "./user_data.js";
 
 }
 
+const storedUserData = JSON.parse(localStorage.getItem('userData'));
+storedUserData.completedModules.forEach(element => {
+    // document.getElementById(`ci${element}`).style.background = 'green';
+    document.getElementById(`ci${element}`).style.background = 'linear-gradient(to right, rgb(50, 129, 67), rgb(25, 95, 74))';
+    document.getElementById(`ci${element}`).querySelector('h3').style.color="white";
+    document.getElementById(`ci${element}`).querySelector('p').style.color="#121632";
+});
+
+
 const modulePrev = document.getElementById('modulePrev');
 modulePrev.addEventListener('click', () => {
     let cmid = moduleId - 1;
@@ -198,26 +207,6 @@ modulePrev.addEventListener('click', () => {
         openContent(Name, 'assignment.html', cmid, 'Q');
     }
 });
-
-// const moduleNext = document.getElementById('moduleNext');
-// moduleNext.addEventListener('click', () => {
-//     let cmid = moduleId + 1;
-//     let dt = Object.keys(ModuleData[cmid]);
-
-//     if (dt.includes("R")) {
-//         openContent(Name, 'user.html', cmid, 'R');
-//     } else {
-//         openContent(Name, 'assignment.html', cmid, 'Q');
-//     }   
-// });
-
-
-
- 
-//  function openContent(name, page, moduleId, type){
-//     const url = `${page}?moduleId=${moduleId}&type=${type}&name=${Name}`;
-//     window.location.href = url;
-// }
 
 const moduleNext = document.getElementById('moduleNext');
 
