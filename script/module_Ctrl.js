@@ -188,31 +188,29 @@ import { ModuleData } from  "./user_data.js";
 }
 
 const modulePrev = document.getElementById('modulePrev');
-modulePrev.addEventListener('click',()=>{
-   
-        let cmid = moduleId-1;
-        let dt = Object.keys(ModuleData[cmid]);
-        console.log(cmid, typeof(cmid), "|",dt, typeof(dt));
-        if(dt=="R"){
-            openContent(Name, 'user.html', cmid, 'R');
-        }else{
-            openContent(Name, 'assignment.html', cmid, 'Q');
-        }
-        
-})
-
-const moduleNext = document.getElementById('moduleNext');
-moduleNext.addEventListener('click',()=>{
-    let cmid = moduleId+1;
+modulePrev.addEventListener('click', () => {
+    let cmid = moduleId - 1;
     let dt = Object.keys(ModuleData[cmid]);
-    console.log(cmid, typeof(cmid), "|",dt, typeof(dt));
 
-    if(dt=="R"){
+    if (dt.includes("R")) {
         openContent(Name, 'user.html', cmid, 'R');
-    }else{
+    } else {
         openContent(Name, 'assignment.html', cmid, 'Q');
     }
-})
+});
+
+const moduleNext = document.getElementById('moduleNext');
+moduleNext.addEventListener('click', () => {
+    let cmid = moduleId + 1;
+    let dt = Object.keys(ModuleData[cmid]);
+
+    if (dt.includes("R")) {
+        openContent(Name, 'user.html', cmid, 'R');
+    } else {
+        openContent(Name, 'assignment.html', cmid, 'Q');
+    }
+});
+
 
 
  
