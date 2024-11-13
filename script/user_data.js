@@ -1,30 +1,5 @@
-const urlParams = new URLSearchParams(window.location.search)
-const name = urlParams.get('name')
-const result = urlParams.get('result') 
-const moduleId = urlParams.get('moduleId');
-const Datatype = urlParams.get('type');
 
 // DATABASE FOR ALL CONTENT --START
-
-// const Vdata = [
-  //     {
-    //       "id": "c-1",
-    //       "label": "Mark as Complete",
-    //       "checked": false,
-    //       "videoUrl": "https://drive.google.com/file/d/1FVtAN9ub495ZBMcR_P7L2KiO3_rxd1Fr/preview",
-    
-    //       "thumbnail": "assest/t_n.png"  // Add thumbnail for the first video
-    //   },
-    //   {
-//       "id": "c-2",
-//       "label": "Mark as Complete",
-//       "checked": false,
-//       "videoUrl": "https://drive.google.com/file/d/1BBnYqSQaQSZBieMsOjWFNM8ADgU7hofN/preview",
-//       "thumbnail": "assest/t_n.png"  // Add thumbnail for the second video
-//   },
-// ]
-
-
 
 export const ModuleData = [
   // 0
@@ -39,7 +14,7 @@ export const ModuleData = [
     "R" : {
       "R1": "110.png",
       "R2": "111.png"
-    },
+    }
   },
   // 2
   {
@@ -315,16 +290,13 @@ export const ModuleData = [
   {
     "R" : {
       "R1" : "1410.png",
-      "R2" : "1411.png",
-      "R3" : "1412.png",
-      "R4" : "1413.png",
-      "R5" : "1414.png",
-      "R6" : "1415.png",
-      "R7" : "1416.png",
-      "R8" : "1417.png",
-      "R9" : "1418.png",
-      "R10" : "1419.png",
-      "R11" : "14110.png"
+      "R2" : "1411a.png",
+      "R3" : "1413.png",
+      "R4" : "1414.png",
+      "R5" : "1415.png",
+      "R6" : "1416.png",
+      "R7" : "1417.png",
+      "R8" : "1418.png",
     },
     "V" : {
       "V1" : "PG19.mp4"
@@ -353,16 +325,12 @@ export const ModuleData = [
         ],
         "answer": "2"
       }
-      
-
-      
     ]
   },
   // 25
   {
     "R" : {
-       "R1":"1419.png",
-       "R2":"14110.png"
+       "R1" : "14110a.png"
     }
   },
   // 26
@@ -387,9 +355,7 @@ export const ModuleData = [
           "इनमें से कोई नहीं"
         ],
         "answer": "2"
-      }
-      
-      
+      }      
     ]
   },
   // 27
@@ -397,6 +363,9 @@ export const ModuleData = [
     "R" : {
        "R1" : "1510.png",
       "R2" : "1511.png"
+    },
+    "V" : {
+      "V1" : "PG23.mp4"
     }
   },
   // 28
@@ -439,9 +408,7 @@ export const ModuleData = [
           "इनमें सभी"
         ],
         "answer": "3"
-      }
-      
-      
+      }      
     ]
   },
   // 31
@@ -475,9 +442,6 @@ export const ModuleData = [
     "R" : {
       "R1" : "1810.png",
       "R2" : "1811.png"
-    },
-    "V" : {
-      "V1" : "PG23.mp4"
     }
   },
   // 34
@@ -500,141 +464,90 @@ export const ModuleData = [
   {
     "R" : {
    "R1" : "1910.png"
-    }
+    },
   }
 ];
 
 
-// DATABASE FOR ALL CONTENT --END
-const contentList = document.getElementById('content-list');
-const CurrentMID = document.getElementById('mid');
 
-if(moduleId==null){
-  const url = `${'user.html'}?moduleId=${0}&type=${'R'}&name=${name}`;
-  window.location.href = url;
-}
 
-dataCollector(moduleId,ModuleData);
+document.addEventListener('DOMContentLoaded', () => {
+  const contentList = document.getElementById('content-list');
+  const CurrentMID = document.getElementById('mid');
 
-function dataCollector(moduleId,ModuleData){
-  const subModData = ModuleData[moduleId];
-  const finalData = subModData['R'];
-  if(finalData){
-    CurrentMID.innerHTML = moduleId;
-    Object.values(finalData).forEach((e)=>{
-      const li = document.createElement('li');
-      const div = document.createElement('div')
-      const img = document.createElement('img');
-      const path = `moduleDB/M${moduleId}/${e}`;
-      console.log(path);
-      img.width= 320
-      img.src = path;
-      li.appendChild(div)
-      li.appendChild(img)
-      contentList.appendChild(li);
-    })
-  }
-  
-  const finalDataV = subModData["V"];
-  if(finalDataV){
-    Object.values(finalDataV).forEach((e) => {
-      const li = document.createElement('li');
-      const div = document.createElement('div');
-      const video = document.createElement('video');
-      const path = `moduleDB/M${moduleId}/${e}`;
-      console.log(path);
-      video.width = 320;
-      video.controls = true;
-      video.src = path;
-      li.appendChild(div);
-      li.appendChild(video);
-      contentList.appendChild(li);
-    });
+  const urlParams = new URLSearchParams(window.location.search);
+  const name = urlParams.get('name');
+  const result = urlParams.get('result'); 
+  const moduleId = Number(urlParams.get('moduleId'));
+  const Datatype = urlParams.get('type');
+
+  if (moduleId == null) {
+      const url = `user.html?moduleId=0&type=R&name=${name}`;
+      window.location.href = url;
   }
 
+  dataCollector(moduleId, ModuleData);
+
+  function dataCollector(moduleId, ModuleData) {
+      const subModData = ModuleData[moduleId];
+      const finalData = Object.keys(subModData);
+
+      if (finalData.includes('R')) {
+          if (CurrentMID) {
+              CurrentMID.innerHTML = moduleId;
+          } else {
+              console.warn("Element with ID 'mid' not found.");
+          }
+
+          Object.values(subModData['R']).forEach((e) => {
+              const li = document.createElement('li');
+              const div = document.createElement('div');
+              const img = document.createElement('img');
+              const path = `moduleDB/M${moduleId}/${e}`;
+              console.log(path);
+              img.width = 320;
+              img.src = path;
+              li.appendChild(div);
+              li.appendChild(img);
+              contentList.appendChild(li);
+          });
+      }
+
+      if (finalData.includes('V')) {
+          Object.values(subModData['V']).forEach((e) => {
+              const li = document.createElement('li');
+              const div = document.createElement('div');
+              const video = document.createElement('video');
+              const path = `moduleDB/M${moduleId}/${e}`;
+              console.log(path);
+              video.width = 320;
+              video.controls = true;
+              video.src = path;
+              li.appendChild(div);
+              li.appendChild(video);
+              contentList.appendChild(li);
+          });
+      }
   }
+});
 
 
-// renderContent(data)
 
-// function renderContent(content) {
-//   const contentList = document.getElementById('content-list')
 
-//   content.forEach(item => {
-//     // Create list item element
-//     const li = document.createElement('li')
-
-//     // Create div for checkbox and label
-//     const div = document.createElement('div')
-//     div.classList.add('ctr')
-
-//     // Create checkbox input
-//     const checkbox = document.createElement('input')
-//     checkbox.type = 'checkbox'
-//     checkbox.id = item.id
-//     checkbox.checked = item.checked
-
-//     // Create label
-//     const label = document.createElement('i')
-//     label.textContent = item.label
-//     label.htmlFor = item.id
-
-//     // Append checkbox and label to div
-//     div.appendChild(checkbox)
-//     div.appendChild(label)
-
-//     // Create video element
-//     const video = document.createElement('iframe')
-//     video.width = 310
-//     video.height = 200
-//     video.src = item.videoUrl
-//     video.controls = true  // Add controls for play, pause, etc.
-//     video.setAttribute('preload', 'metadata')  // Preload only metadata for faster loading
-//     video.setAttribute('loading', 'lazy')  // Lazy loading for better performance
-
-//     // Add poster attribute for the video thumbnail
-//     video.setAttribute('poster', item.thumbnail)
-
-//     // Append video and div to the list item
-//     li.appendChild(div)
-//     li.appendChild(video)
-
-//     // Append list item to the content list
-//     contentList.appendChild(li)
-//   })
-// }
-
-// document.addEventListener('DOMContentLoaded', renderContent)
-
-// document.getElementById('ass').addEventListener('click', e => {
-//   const Name = encodeURIComponent(name)
-//   window.location.href = `assignment.html?name=${Name}`
-// })
-
-// if (result === 'Pass') {
-//   // Check if result is a string and equals 'pass'
-//   const cerButton = document.getElementById('cer')
-//   cerButton.style.cursor = 'pointer'
-
-//   cerButton.addEventListener('click', e => {
-//     const Name = encodeURIComponent(name) // Properly encode the name
-//     window.location.href = `certificate.html?name=${Name}` // Use the encoded name
-//   })
-// } else {
-  //   const cerButton = document.getElementById('cer')
-//   cerButton.style.cursor = 'not-allowed' // Set the cursor to 'not-allowed' when the result is not pass
-// }
-
-// if (result === 'Pass') { // Check if result is a string and equals 'pass'
-//     const cerButton = document.getElementById('cer');
-//     cerButton.style.cursor = 'pointer';
-
-//     cerButton.addEventListener('click', e => {
-//       const Name = encodeURIComponent(name); // Properly encode the name
-//       window.location.href = `certificate.html?name=${Name}`; // Use the encoded name
-//     });
-//   } else {
-  //     const cerButton = document.getElementById('cer');
-//     cerButton.style.cursor = 'not-allowed'; // Set the cursor to 'not-allowed' when the result is not pass
-//   }
-
+  // const Vdata = [
+  //     {
+    //       "id": "c-1",
+    //       "label": "Mark as Complete",
+    //       "checked": false,
+    //       "videoUrl": "https://drive.google.com/file/d/1FVtAN9ub495ZBMcR_P7L2KiO3_rxd1Fr/preview",
+    
+    //       "thumbnail": "assest/t_n.png"  // Add thumbnail for the first video
+    //   },
+    //   {
+//       "id": "c-2",
+//       "label": "Mark as Complete",
+//       "checked": false,
+//       "videoUrl": "https://drive.google.com/file/d/1BBnYqSQaQSZBieMsOjWFNM8ADgU7hofN/preview",
+//       "thumbnail": "assest/t_n.png"  // Add thumbnail for the second video
+//   },
+// ]

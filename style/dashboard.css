@@ -40,22 +40,26 @@ body {
       width: 100%;
       height: 50px;
       display: flex;
-      justify-content:space-between;
-      align-items:center;
+      justify-content: space-between;
+      align-items: center;
 
-      & p{
+      & p {
         font-size: 30px;
-         font-weight: bold;
-         font-family: "Kalam", cursive;
-         color: rgb(79, 79, 168);
-         & img{
-            width: 30px;
-         }
+        font-weight: bold;
+        font-family: 'Kalam', cursive;
+        color: rgb(79, 79, 168);
+        & img {
+          width: 30px;
+        }
       }
-      & button{
+      & button {
         padding: 9px;
-        background: linear-gradient(to right,rgb(55, 108, 138),rgb(88, 167, 170));
-        border-radius:10px;
+        background: linear-gradient(
+          to right,
+          rgb(55, 108, 138),
+          rgb(88, 167, 170)
+        );
+        border-radius: 10px;
         color: rgb(250, 250, 250);
         display: flex;
         justify-content: center;
@@ -67,98 +71,192 @@ body {
       }
     }
     & header {
-             text-align: center;
-             & h1{
-                font-size: 30px;
-             }   
+      text-align: center;
+      & h1 {
+        font-size: 30px;
+      }
     }
     & main {
-        & p{
-            font-family: "Kalam", cursive;
-            font-weight: bold;
-        }
-        & strong{
-            color: rgb(47, 122, 192);
-        }
-        & h2{
-            color: rgb(114, 6, 6);
-        }
-        & q{
-            font-weight: bolder;
-            font-style: italic;
-            color: rgb(47, 122, 192);
-        }
-        & section{
-            background:linear-gradient(64deg,white,wheat,white);
-            padding: 15px;
-            & .sign{
-                /* background-color: red; */
-                width:100%;
-                height: 50px;
-                text-align: right;
-                & img{
-                    width: 90px;
-                }
-            }
-        }
-        & .msg2{
-          & i{
-            font-size: 20px;
-            font-weight: bold;
-          }
-          & h2{
-            font-size: 22px;
-          }
-          & ul{
+      & p {
+        font-family: 'Kalam', cursive;
+        font-weight: bold;
+      }
+      & strong {
+        color: rgb(47, 122, 192);
+      }
+      & h2 {
+        color: rgb(114, 6, 6);
+      }
+      & q {
+        font-weight: bolder;
+        font-style: italic;
+        color: rgb(47, 122, 192);
+      }
+      & section {
+        background: linear-gradient(64deg, white, wheat, white);
+        padding: 15px;
+        & .sign {
+          width: 100%;
+         
+          /* background-color: rebeccapurple; */
+          display: flex;
+          flex-direction: column;
+          /* justify-content: center; */
 
-            /* background: rebeccapurple; */
-            padding:20px;
-            text-align: justify;
+          /* background-color: red; */
+          & .one {
+            width: 100%;
             display: flex;
-            justify-content: center;
-            align-items: start;
-            flex-direction: column;
-            gap:9px;
-            & li{
-              font-family: "Kalam", cursive;
-              font-weight: bold;
+            justify-content: end;
+            align-items: center;
+            /* gap: 50px; */
+            /* background-color: gray; */
+            & .pic {
+              width: 100px;
+              height: 100px;
+              /* background-color: black; */
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              padding-top: 20px;
+              & img {
+                width: 90px;
+              }
+            }
+            & .bio {
+              /* background-color: red; */
+              display: flex;
+              justify-content: center;
+              align-items: start;
+              flex-direction: column;
+              gap: 2px;
+              & .name {
+                font-family: 'Noto Sans Devanagari', sans-serif;
+                font-size: 20px;
+              }
+              & .des {
+                font-family: 'Noto Sans Devanagari', sans-serif;
+                font-size: 10px;
+              }
+            }
+          }
+          & .s {
+            /* background-color: aqua; */
+            width: 100%;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            position: relative;
+            background-color: rebeccapurple;
+            & img{
+              position: absolute;
+              top:-8px;
+              right: 20px;
+              width: 100px;
             }
           }
         }
+      }
+      & .msg2 {
+        & i {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        & h2 {
+          font-size: 22px;
+        }
+        & ul {
+          /* background: rebeccapurple; */
+          padding: 20px;
+          text-align: justify;
+          display: flex;
+          justify-content: center;
+          align-items: start;
+          flex-direction: column;
+          gap: 9px;
+          & li {
+            font-family: 'Kalam', cursive;
+            font-weight: bold;
+          }
+        }
+      }
     }
     /* & .p-a{
         font-weight: bold;
     } */
-    & #moduleList{
-        /* background: red; */
-        width: 90%;
+    & #moduleList {
+      /* background: red; */
+      width: 90%;
+      display: flex;
+      gap: 2px;
+
+      & li {
+        height: 30px;
+        list-style: none;
+        padding: 2px;
+        background: linear-gradient(
+          to right,
+          rgb(55, 138, 106),
+          rgb(105, 170, 88)
+        );
+        border-radius: 10px;
+        color: rgb(250, 250, 250);
         display: flex;
-        gap:2px;
-        
-        & li{
-            height: 30px;
-            list-style: none;
-            padding: 2px;
-            background: linear-gradient(to right,rgb(55, 138, 106),rgb(105, 170, 88));
-            border-radius:10px;
-            color: rgb(250, 250, 250);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size:15px;
-        }
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+      }
     }
-    & #continueButton{
-      padding: 9px;
-      background: rgb(47, 122, 192);
-      background: linear-gradient(to right,rgb(55, 138, 106),rgb(105, 170, 88));
-      border-radius:10px;
-      color: rgb(250, 250, 250);
+
+    & .cont {
+      width: 100%;
+      height: 230px;
+      border-radius: 20px;
+      background: linear-gradient(64deg, white, wheat, white);
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      color: rgb(129, 44, 5);
+      font-size: 30px;
+      padding-top: 20px;
+      font-family: 'Kalam', cursive;
+      font-weight: bold;
+    }
+
+    & #continueButton {
+      display: block;
+      padding: 9px;
+      background: rgb(47, 122, 192);
+      background: linear-gradient(
+        to right,
+        rgb(55, 138, 106),
+        rgb(105, 170, 88)
+      );
+      border-radius: 5px;
+      color: rgb(250, 250, 250);
       box-shadow: 2px 3px 9px rgba(56, 56, 56, 0.438);
-      border:none;
+      border: none;
+      height: 40px;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    & #certificate {
+      display: none;
+      padding: 9px;
+      background: rgb(47, 122, 192);
+      background: linear-gradient(
+        to right,
+        rgb(55, 138, 106),
+        rgb(105, 170, 88)
+      );
+      border-radius: 5px;
+      color: rgb(250, 250, 250);
+      box-shadow: 2px 3px 9px rgba(56, 56, 56, 0.438);
+      border: none;
       height: 40px;
       font-size: 20px;
     }
