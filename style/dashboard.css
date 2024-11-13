@@ -18,11 +18,12 @@ body {
   flex-direction: column;
   text-align: justify;
   & .container {
+    /* background: red; */
     max-height: 90%;
     min-height: 100vh;
 
     max-width: 420px;
-    min-width: 320px;
+    min-width: 100px;
 
     display: flex;
     flex-direction: column;
