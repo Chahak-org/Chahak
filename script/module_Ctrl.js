@@ -209,7 +209,7 @@ modulePrev.addEventListener('click', () => {
 
 const moduleNext = document.getElementById('moduleNext')
 
-const delay = 180000 // 3 minutes in milliseconds
+const delay = 8000 // 3 minutes in milliseconds
 let startTime = Date.now()
 let flag = false
 // Enable the button after 3 minutes
@@ -224,7 +224,7 @@ console.log(statusMod);
 
 // Add click event listener to the button
 moduleNext.addEventListener('click', () => {
-  if (!statusMod || flag) {
+  if (!statusMod && !flag) {
     const timeElapsed = Date.now() - startTime;
     const timeLeft = Math.ceil((delay - timeElapsed) / 1000) // सेकंड में बदलें
 
