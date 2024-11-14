@@ -465,6 +465,9 @@ export const ModuleData = [
     "R" : {
    "R1" : "1910.png"
     },
+    "D" : {
+      "V1" : "https://drive.google.com/file/d/1iYeRUo1Tm_BRj1EfhlKa22I_NIWrT-I7/preview"
+    }
   }
 ];
 
@@ -528,6 +531,19 @@ document.addEventListener('DOMContentLoaded', () => {
               contentList.appendChild(li);
           });
       }
+
+      if (finalData.includes('D')) {
+        Object.values(subModData['D']).forEach((e) => {
+            const li = document.createElement('li');
+            const div = document.createElement('div');
+            const iframe = document.createElement('iframe');
+            iframe.src = `${e}`;
+            iframe.width = '320';
+            li.appendChild(div);
+            li.appendChild(iframe);
+            contentList.appendChild(li);
+        });
+    }
   }
 });
 
