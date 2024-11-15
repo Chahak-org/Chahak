@@ -209,7 +209,7 @@ modulePrev.addEventListener('click', () => {
 
 const moduleNext = document.getElementById('moduleNext')
 
-const delay = 5000 // 3 minutes in milliseconds
+const delay = 180000 // 3 minutes in milliseconds
 let startTime = Date.now()
 let flag = false
 // Enable the button after 3 minutes
