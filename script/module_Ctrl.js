@@ -238,18 +238,18 @@ moduleNext.addEventListener('click', () => {
 ----------------------------------------------------
 ⚠ एक मॉड्यूल का न्यूनतम समय: ${minModuleTime} मिनट।`)
   }else {
-    let cmid = moduleId + 1 // Next module ID
-    let dt = Object.keys(ModuleData[cmid])
-
+    if(moduleId<35){
+      let cmid = moduleId + 1 // Next module ID
+      let dt = Object.keys(ModuleData[cmid])
+      if (dt.includes('R')) {
+        openContent(Name, 'user.html', cmid, 'R')
+      } else if(dt.includes('Q')) {
+        openContent(Name, 'assignment.html', cmid, 'Q')
+      }
+    }
     // Update the current module as completed
-
     completeModule(moduleId)
 
-    if (dt.includes('R')) {
-      openContent(Name, 'user.html', cmid, 'R')
-    } else {
-      openContent(Name, 'assignment.html', cmid, 'Q')
-    }
   }
 })
   
