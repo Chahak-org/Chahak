@@ -82,6 +82,7 @@ document.getElementById('certificate').addEventListener('click', async () => {
 
         // Dynamic data
         const NameOfCandidate = storedUserData.fullName || 'Unknown User';
+        const SchoolOfCandidate = storedUserData.schoolName || 'Unknown School';
         const CurrentTime = new Date().toLocaleDateString('en-GB', {
             day: 'numeric',
             month: 'short',
@@ -90,7 +91,8 @@ document.getElementById('certificate').addEventListener('click', async () => {
 
         // Add dynamic text
         firstPage.drawText(NameOfCandidate, { x: 280, y: height - 240, size: fontSize, font, color: PDFLib.rgb(0, 0, 0) });
-        firstPage.drawText(CurrentTime, { x: 280, y: height - 290, size: fontSize, font, color: PDFLib.rgb(0, 0, 0) });
+        firstPage.drawText(SchoolOfCandidate, { x: 215, y: height - 263, size: fontSize, font, color: PDFLib.rgb(0, 0, 0) });
+        firstPage.drawText(CurrentTime, { x: 505, y: height - 285, size: fontSize, font, color: PDFLib.rgb(0, 0, 0) });
 
         // Serialize the PDF to bytes and trigger a download
         const pdfBytes = await pdfDoc.save();

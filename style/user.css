@@ -17,6 +17,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: radial-gradient(
+    circle,
+    rgb(243, 222, 197) 20%,   /* Soft orange */
+    rgb(225, 180, 241) 50%, /* Vibrant violet */
+    rgb(210, 187, 255) 100% /* Modern purple */
+  );
 
   & .container {
     max-height: 90%;

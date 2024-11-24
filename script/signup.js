@@ -1,4 +1,5 @@
 const fullName = document.getElementById("FN");
+const schoolName = document.getElementById("SN");
 const contact = document.getElementById('CN');
 const password = document.getElementById('PW');
 const SignUpButton = document.getElementById('SB');
@@ -26,9 +27,10 @@ SignUpButton.addEventListener('click', (e) => {
     }
 
     if(isValid){
-        console.log(`NAME: ${fullName.value} CONTACT: ${contact.value} PASSWORD: ${password.value}`);
+        console.log(`NAME: ${fullName.value} SCHOOL: ${schoolName} CONTACT: ${contact.value} PASSWORD: ${password.value}`);
         const userData = {
             fullName: fullName.value,
+            schoolName: schoolName.value,
             contact: contact.value,
             password: password.value,
             completedModules: [] // Track completed modules
