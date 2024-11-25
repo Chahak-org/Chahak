@@ -21,7 +21,7 @@ body {
     circle,
     rgb(243, 222, 197) 20%,   /* Soft orange */
     rgb(225, 180, 241) 50%, /* Vibrant violet */
-    rgb(210, 187, 255) 100% /* Modern purple */
+    #d1baff 100% /* Modern purple */
   );
 
   & .container {
@@ -65,7 +65,7 @@ body {
         & #close {
           display: none;
           cursor: pointer;
-          width:25px;
+          width:35px;
         }
 
         & #open {
@@ -101,7 +101,7 @@ body {
     position: relative;
 
     & .modules {
-      width: 95%;
+      width:85%;
       height: 80vh;
 
       padding: 15px;
@@ -112,21 +112,42 @@ body {
       
       display: flex;
       justify-content: center;
-      overflow-y: scroll;
       z-index: 111;
       transition: right 0.3s ease;
-      background-color: #ffffff;
+      background: linear-gradient(to top, 
+      #e1b4f1 20%,
+      #ddbaa5d5 50%,
+      #d1baff 100% 
+      );
+      backdrop-filter: blur(1px); 
+      -webkit-backdrop-filter: blur(10px); 
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
       
+      box-shadow:0 4px 8px rgba(0, 0, 0, 0.459);
       
+      & .course-container::-webkit-scrollbar {
+        width:5px;               /* width of the entire scrollbar */
+      }
       
-      & .course-container {
+      & .course-container::-webkit-scrollbar-track {
+        background: rgba(79, 56, 121, 0);     
+      }
+      
+      & .course-container::-webkit-scrollbar-thumb {
+        background-color: rgba(184, 107, 219, 0.616);    /* color of the scroll thumb */
+        border-radius: 20px;       /* roundness of the scroll thumb */
+      }
+      
+      & .course-container { 
+        
+        overflow-y: scroll;
         & .course-section {
           padding: 16px;
           /* border-bottom: 10px solid #c8dbff; */
           /* background: linear-gradient(to right,rgb(137, 106, 163),rgb(82, 20, 117)); */
           & .course-header {
+            animation: a 1s both;
+	          animation-timeline: view();
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -146,6 +167,8 @@ body {
           }
         }
         & .course-item {
+          animation: a 1s both;
+          animation-timeline: view();
           display: flex;
           align-items: center;
           margin: 8px 0;
@@ -302,3 +325,12 @@ body {
   }
 }
 
+@keyframes a{
+  0%{
+    opacity: 0;
+    scale: 0.8;
+  }30%{
+    opacity: 1;
+    scale: 1;
+  }
+}

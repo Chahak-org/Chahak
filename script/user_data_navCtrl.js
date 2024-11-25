@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
               
         openIcon.style.display = "none"; // Hide open icon
         closeIcon.style.display = "inline"; // Show close icon
-        modules.style.right = '0%';
+        modules.style.right = '8%';
     }
 
     // Function to hide the modules and toggle icons
@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
         modules.style.right = '120%';
     }
 
+    
+
     // Event listeners for opening and closing the menu
     openIcon.addEventListener("click", openMenu);
     closeIcon.addEventListener("click", closeMenu);
@@ -43,4 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     moduleLinks.forEach(link => {
         link.addEventListener("click", closeMenu); // Add click event to close the menu
     });
+
+
 });
