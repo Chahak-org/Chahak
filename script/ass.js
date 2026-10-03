@@ -20,7 +20,7 @@ const moduleId = Number(urlParams.get('moduleId'))
 userName.innerText = username;
 
 // Timer (5 min 25 sec)
-let timeLimit = 5 * 60 + 25 // Convert to seconds
+let timeLimit = 1 // 5 * 60 + 25 // Convert to seconds
 let timer = setInterval(() => {
   let elapsedTime = Date.now() - startTime
   let remainingTime = timeLimit - Math.floor(elapsedTime / 1000)
