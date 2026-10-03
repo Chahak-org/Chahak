@@ -252,7 +252,7 @@ body {
     }
 
     & #certificate {
-      display: none;
+      display: block;
       padding: 9px;
       background: rgb(47, 122, 192);
       background: linear-gradient(
